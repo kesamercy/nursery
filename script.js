@@ -38,31 +38,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
+    // Define classes for states
+    const activeClasses = ['bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30', 'scale-105', 'border-transparent', 'hover:bg-primary'];
+    const inactiveClasses = ['bg-white', 'text-dark', 'border-2', 'border-gray-200', 'hover:border-primary', 'hover:text-primary'];
+
     if (filterButtons.length > 0) {
+        console.log('Gallery: Found', filterButtons.length, 'filter buttons.');
+
         filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
+            button.addEventListener('click', (e) => {
+                console.log('Gallery: Filter clicked:', button.innerText);
+
+                // 1. Reset ALL buttons to Inactive
                 filterButtons.forEach(btn => {
-                    // Reset to default white state
-                    btn.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30', 'scale-105', 'border-transparent');
-                    btn.classList.add('bg-white', 'text-dark', 'border-2', 'border-gray-200');
+                    // Remove Active Classes
+                    activeClasses.forEach(cls => btn.classList.remove(cls));
+
+                    // Add Inactive Classes
+                    inactiveClasses.forEach(cls => btn.classList.add(cls));
                 });
 
-                // Add active class to clicked button
-                // Force remove the default classes first
-                button.classList.remove('bg-white', 'text-dark', 'border-2', 'border-gray-200');
-                // Add the active primary classes
-                button.classList.add('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30', 'scale-105', 'border-transparent');
+                // 2. Set CLICKED button to Active
+                // Remove Inactive Classes
+                inactiveClasses.forEach(cls => button.classList.remove(cls));
+
+                // Add Active Classes
+                activeClasses.forEach(cls => button.classList.add(cls));
 
                 const filter = button.getAttribute('data-filter');
+                console.log('Gallery: Filtering by', filter);
 
-                // Filter items
+                // 3. Filter Items
                 galleryItems.forEach(item => {
                     const category = item.getAttribute('data-category');
+                    item.style.animation = 'none'; // Reset animation
+                    item.offsetHeight; // Trigger reflow
+
                     if (filter === 'all' || category === filter) {
                         item.classList.remove('hidden');
-                        item.style.animation = 'none';
-                        item.offsetHeight; /* trigger reflow */
                         item.style.animation = null;
                         item.classList.add('animate-fade-in-up');
                     } else {
@@ -72,6 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         });
+    } else {
+        console.log('Gallery: No filter buttons found.');
     }
 });
 
