@@ -4,315 +4,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Kamuli Hill Infant School</title>
+    <title>Gallery | Kamuli Hill Infant School, Kireka</title>
+    <meta name="description" content="Photos of learning, play and creative arts at Kamuli Hill Infant School, Kireka.">
+    <meta name="theme-color" content="#13234f">
+    <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        cream: '#fcfbf7', // Warm Cream Background
-                        dark: '#3e2b26', // Warm Dark Brown Text
-                        primary: '#ff6b35', // Playful Orange
-                        secondary: '#facc15', // Bright Yellow
-                        accent: '#2ecc71', // Fresh Green
-                        info: '#3498db', // Sky Blue
-                        kamuli: '#1e3a8a', // School Brand Blue (Royal)
-                        'soft-orange': '#ffe5d9',
-                        'soft-green': '#d5f5e3',
-                        'soft-blue': '#d6eaf8',
-                        'soft-yellow': '#fcf3cf',
-                    },
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
-                        'glow': '0 0 20px rgba(255, 107, 53, 0.3)',
-                        'card': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'bounce-slow': 'bounce 3s infinite',
-                        'spin-slow': 'spin 12s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-nav {
-            background: rgba(252, 251, 247, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 2px solid rgba(255, 107, 53, 0.1);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-cream text-dark font-sans antialiased overflow-x-hidden">
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navbar -->
-    <nav id="navbar"
-        class="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-12 flex justify-between items-center transition-all duration-300">
-        <div class="flex items-center gap-2 group cursor-pointer">
-            <a href="index.html" class="flex items-center gap-2">
-                <div
-                    class="w-12 h-12 bg-kamuli text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl shadow-lg transform group-hover:rotate-12 transition-transform border-4 border-secondary">
-                    K</div>
-                <div class="flex flex-col">
-                    <span
-                        class="text-xl md:text-2xl font-bold font-serif tracking-tight text-kamuli leading-none">Kamuli
-                        Hill</span>
-                    <span class="text-sm font-bold text-primary tracking-widest uppercase">Infant School</span>
-                </div>
-            </a>
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar__info">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <a href="tel:+256758916432">075 891 6432</a>
+                </span>
+                <span class="topbar__address">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Kireka Kamuli Road, Kampala
+                </span>
+            </div>
+            <span class="topbar__note">Admissions open: Day Care to P.2</span>
         </div>
-
-        <div class="hidden md:flex gap-8 text-sm font-bold text-gray-600">
-            <a href="index.html" class="hover:text-primary hover:-translate-y-0.5 transition-all duration-300">Home</a>
-            <a href="about.html" class="hover:text-accent hover:-translate-y-0.5 transition-all duration-300">About</a>
-            <a href="index.html#programs"
-                class="hover:text-info hover:-translate-y-0.5 transition-all duration-300">Programs</a>
-            <a href="gallery.html" class="text-info underline underline-offset-4 decoration-2">Gallery</a>
-            <a href="admissions.html"
-                class="hover:text-secondary hover:-translate-y-0.5 transition-all duration-300">Admissions</a>
-            <a href="contact.html"
-                class="hover:text-kamuli hover:-translate-y-0.5 transition-all duration-300">Contact</a>
-        </div>
-
-        <a href="admissions.html"
-            class="hidden md:block bg-secondary text-dark border-b-4 border-yellow-600 active:border-b-0 active:translate-y-1 px-8 py-3 rounded-full text-sm font-bold hover:bg-yellow-400 transition-all shadow-lg transform hover:-rotate-1">
-            Enrol Now 🎓
-        </a>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn"
-            class="md:hidden relative z-50 p-2 text-primary hover:bg-primary/10 rounded-full transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-    </nav>
-
-    <!-- Full Screen Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="hidden fixed inset-0 bg-[#fcfbf7]/98 backdrop-blur-xl z-[60] flex-col items-center justify-center space-y-8 transition-all duration-300">
-        <!-- Close Button -->
-        <button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-dark hover:text-primary transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-
-        <!-- Menu Links -->
-        <a href="index.html"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Home</a>
-        <a href="about.html" class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">About
-            Us</a>
-        <a href="index.html#programs"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Programs</a>
-        <a href="gallery.html"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Gallery</a>
-        <a href="admissions.html"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Admissions</a>
-        <a href="contact.html"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Contact</a>
-
-        <a href="admissions.html"
-            class="mt-8 bg-secondary text-dark border-b-4 border-yellow-600 active:border-b-0 active:translate-y-1 px-10 py-4 rounded-full text-xl font-bold hover:bg-yellow-400 transition-all shadow-xl transform hover:-rotate-1">
-            Enrol Now 🎓
-        </a>
-
-        <!-- Decorative Shapes -->
-        <div class="absolute bottom-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-bounce-slow"></div>
-        <div class="absolute top-10 left-10 w-16 h-16 bg-accent/10 rounded-full blur-xl animate-spin-slow"></div>
     </div>
 
     <!-- Header -->
-    <header class="pt-32 pb-12 px-4 md:px-12 bg-soft-blue/30 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <span
-                class="inline-block bg-white text-info px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 border border-info/10">School
-                Life</span>
-            <h1 class="text-5xl md:text-6xl font-serif font-black text-dark mb-6">Moments of <span
-                    class="text-primary">Joy!</span></h1>
-            <p class="text-xl text-gray-500 max-w-2xl mx-auto">Explore our facilities, events, and daily activities.</p>
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="index.html" aria-label="Kamuli Hill Infant School, home">
+                <span class="brand__crest" aria-hidden="true">K</span>
+                <span class="brand__text">
+                    <span class="brand__name">Kamuli Hill</span>
+                    <span class="brand__tag">Infant School</span>
+                </span>
+            </a>
+
+            <nav class="nav" aria-label="Main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#programmes">Programmes</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn--gold header-cta" href="admissions.html">Enrol now</a>
+
+            <button class="menu-toggle" type="button" data-menu-open aria-controls="mobile-menu" aria-expanded="false">
+                <span class="visually-hidden">Open menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
         </div>
     </header>
 
-    <!-- Gallery Grid -->
-    <main class="max-w-7xl mx-auto px-4 md:px-12 py-20 pb-32">
-
-        <!-- Filters -->
-        <!-- Filters -->
-        <div id="gallery-filters" class="flex flex-wrap justify-center gap-4 mb-12">
-            <button data-filter="all"
-                class="filter-btn px-6 py-3 rounded-full bg-primary text-white font-bold shadow-lg shadow-primary/30 scale-105 transition-all duration-300">All</button>
-            <button data-filter="classrooms"
-                class="filter-btn px-6 py-3 rounded-full bg-white text-dark font-bold border-2 border-gray-200 hover:border-primary hover:text-primary transition-all duration-300">Classrooms</button>
-            <button data-filter="events"
-                class="filter-btn px-6 py-3 rounded-full bg-white text-dark font-bold border-2 border-gray-200 hover:border-primary hover:text-primary transition-all duration-300">Events</button>
-            <button data-filter="playtime"
-                class="filter-btn px-6 py-3 rounded-full bg-white text-dark font-bold border-2 border-gray-200 hover:border-primary hover:text-primary transition-all duration-300">Playtime</button>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
+        <div class="mobile-menu__top">
+            <a class="brand" href="index.html">
+                <span class="brand__crest" aria-hidden="true">K</span>
+                <span class="brand__text">
+                    <span class="brand__name">Kamuli Hill</span>
+                    <span class="brand__tag">Infant School</span>
+                </span>
+            </a>
+            <button class="menu-toggle" type="button" data-menu-close>
+                <span class="visually-hidden">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
         </div>
-
-        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- Item 1: Classroom -->
-            <div data-category="classrooms"
-                class="gallery-item group relative overflow-hidden rounded-[2rem] shadow-card bg-white h-64 border-4 border-white">
-                <div class="absolute inset-0 bg-blue-50 flex items-center justify-center">
-                    <!-- Placeholder SVG -->
-                    <svg class="w-24 h-24 text-blue-200" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span class="absolute bottom-4 left-4 font-bold text-blue-300">Classroom Setup</span>
-                </div>
-                <div
-                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">Spacious Classrooms</span>
-                </div>
-            </div>
-
-            <!-- Item 2: Playground -->
-            <div data-category="playtime"
-                class="gallery-item group relative overflow-hidden rounded-[2rem] shadow-card bg-white h-64 border-4 border-white lg:col-span-2">
-                <div class="absolute inset-0 bg-green-50 flex items-center justify-center">
-                    <svg class="w-24 h-24 text-green-200" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span class="absolute bottom-4 left-4 font-bold text-green-300">Playground</span>
-                </div>
-                <div
-                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">Outdoor Fun</span>
-                </div>
-            </div>
-
-            <!-- Item 3: Computer Lab -->
-            <div data-category="classrooms"
-                class="gallery-item group relative overflow-hidden rounded-[2rem] shadow-card bg-white h-64 border-4 border-white lg:row-span-2">
-                <div class="absolute inset-0 bg-purple-50 flex items-center justify-center">
-                    <svg class="w-24 h-24 text-purple-200" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <span class="absolute bottom-4 left-4 font-bold text-purple-300">Computer Lab</span>
-                </div>
-                <div
-                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">Digital Skills</span>
-                </div>
-            </div>
-
-            <!-- Item 4: MDD -->
-            <div data-category="events"
-                class="gallery-item group relative overflow-hidden rounded-[2rem] shadow-card bg-white h-64 border-4 border-white">
-                <div class="absolute inset-0 bg-orange-50 flex items-center justify-center">
-                    <svg class="w-24 h-24 text-orange-200" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 3-2 3 2zm0 0c0 1.105 1.343 2 3 2s3-.895 3-2-3-2-3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 3-2 3 2zM9 10l12-3" />
-                    </svg>
-                    <span class="absolute bottom-4 left-4 font-bold text-orange-300">Music & Dance</span>
-                </div>
-                <div
-                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">Talent Development</span>
-                </div>
-            </div>
-
-            <!-- Item 5: Graduation -->
-            <div data-category="events"
-                class="gallery-item group relative overflow-hidden rounded-[2rem] shadow-card bg-white h-64 border-4 border-white">
-                <div class="absolute inset-0 bg-yellow-50 flex items-center justify-center">
-                    <svg class="w-24 h-24 text-yellow-200" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                        <path
-                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                    </svg>
-                    <span class="absolute bottom-4 left-4 font-bold text-yellow-300">Graduation</span>
-                </div>
-                <div
-                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">Graduation Day</span>
-                </div>
-            </div>
-
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="index.html#programmes">Programmes</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu__actions">
+            <a class="btn btn--gold btn--block" href="admissions.html">Enrol now</a>
+            <a class="btn btn--ghost btn--block" href="tel:+256758916432">Call 075 891 6432</a>
         </div>
+    </div>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <ol class="breadcrumb" aria-label="Breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">Gallery</li>
+                </ol>
+                <h1>Moments of joy</h1>
+                <p class="lead">A look at learning, play and creativity at Kamuli Hill.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="filters" role="group" aria-label="Filter photos">
+                    <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-btn" type="button" data-filter="classrooms" aria-pressed="false">Learning</button>
+                    <button class="filter-btn" type="button" data-filter="playtime" aria-pressed="false">Play</button>
+                    <button class="filter-btn" type="button" data-filter="arts" aria-pressed="false">Creative arts</button>
+                    <button class="filter-btn" type="button" data-filter="pupils" aria-pressed="false">Our pupils</button>
+                </div>
+
+                <ul class="gallery" role="list">
+                    <li class="gallery-item" data-category="pupils">
+                        <button type="button" data-lightbox data-caption="Our wonderful pupils">
+                            <img src="assets/images/pupils-group.jpg" width="900" height="1200" alt="A group of smiling pupils in navy school uniforms standing together outside a classroom" loading="lazy">
+                            <span class="gallery-item__caption">Our wonderful pupils</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="classrooms">
+                        <button type="button" data-lightbox data-caption="Building a tower">
+                            <img src="assets/images/cube-tower.jpg" width="964" height="1200" alt="Pupils working together to build a tall tower of colourful linking cubes" loading="lazy">
+                            <span class="gallery-item__caption">Building a tower</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="playtime">
+                        <button type="button" data-lightbox data-caption="Outdoor play">
+                            <img src="assets/images/outdoor-play-mat.jpg" width="1200" height="900" alt="Children playing with balls and toys on mats spread across the school lawn" loading="lazy">
+                            <span class="gallery-item__caption">Outdoor play</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="arts">
+                        <button type="button" data-lightbox data-caption="Making music">
+                            <img src="assets/images/music-keyboard.jpg" width="928" height="1200" alt="Young pupils gathered around a toy keyboard and colourful balls on a play mat" loading="lazy">
+                            <span class="gallery-item__caption">Making music</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="pupils">
+                        <button type="button" data-lightbox data-caption="Smiles all round">
+                            <img src="assets/images/pupils-smiling-bench.jpg" width="1080" height="946" alt="Pupils in school uniform smiling as they sit together on a ledge at school" loading="lazy">
+                            <span class="gallery-item__caption">Smiles all round</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="classrooms">
+                        <button type="button" data-lightbox data-caption="Counting with cubes">
+                            <img src="assets/images/linking-cubes.jpg" width="958" height="1200" alt="A young girl concentrating as she arranges colourful linking cubes on a play mat" loading="lazy">
+                            <span class="gallery-item__caption">Counting with cubes</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="playtime">
+                        <button type="button" data-lightbox data-caption="Hello, who's calling?">
+                            <img src="assets/images/pretend-telephones.jpg" width="900" height="1200" alt="Two pupils playing pretend with toy telephones on a colourful play mat" loading="lazy">
+                            <span class="gallery-item__caption">Hello, who's calling?</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="pupils">
+                        <button type="button" data-lightbox data-caption="Friends together">
+                            <img src="assets/images/pupils-in-a-row.jpg" width="1080" height="808" alt="Pupils in school uniform sitting side by side outside a classroom" loading="lazy">
+                            <span class="gallery-item__caption">Friends together</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="classrooms">
+                        <button type="button" data-lightbox data-caption="Learning to share">
+                            <img src="assets/images/sharing-toys.jpg" width="900" height="1200" alt="Children sitting in a circle sharing balls and building blocks" loading="lazy">
+                            <span class="gallery-item__caption">Learning to share</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="playtime">
+                        <button type="button" data-lightbox data-caption="Ball pit fun">
+                            <img src="assets/images/play-balls.jpg" width="900" height="1200" alt="A girl reaching for colourful play balls beside a toy keyboard" loading="lazy">
+                            <span class="gallery-item__caption">Ball pit fun</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="pupils">
+                        <button type="button" data-lightbox data-caption="Ready for the day">
+                            <img src="assets/images/pupils-corridor.jpg" width="900" height="1200" alt="Pupils in uniform lined up along the school corridor" loading="lazy">
+                            <span class="gallery-item__caption">Ready for the day</span>
+                        </button>
+                    </li>
+                    <li class="gallery-item" data-category="pupils">
+                        <button type="button" data-lightbox data-caption="Laughing together">
+                            <img src="assets/images/pupils-laughing.jpg" width="1080" height="802" alt="Pupils laughing together as they sit in a row outside their classroom" loading="lazy">
+                            <span class="gallery-item__caption">Laughing together</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+            <img src="" alt="">
+            <div class="lightbox__bar">
+                <span data-lightbox-caption></span>
+                <button class="lightbox__close" type="button" data-lightbox-close>
+                    <span class="visually-hidden">Close photo</span>
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+            </div>
+        </dialog>
     </main>
 
-    <!-- Footer (Same as Index) -->
-    <footer id="contact" class="bg-kamuli text-white pt-24 pb-12 rounded-t-[3rem] mt-12 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- Brand -->
-                <div class="space-y-6">
-                    <span class="text-3xl font-bold font-serif">Kamuli Hill<span class="text-secondary">.</span></span>
-                    <p class="text-blue-100 text-sm leading-relaxed">
-                        Nurturing the development of a child with care, quality education, and love! ❤️
-                    </p>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a class="brand" href="index.html">
+                        <span class="brand__crest" aria-hidden="true">K</span>
+                        <span class="brand__text">
+                            <span class="brand__name">Kamuli Hill</span>
+                            <span class="brand__tag">Infant School</span>
+                        </span>
+                    </a>
+                    <p class="footer-about">Nurturing the development of every child with care, quality education and love.</p>
                 </div>
-
-                <!-- Contact Info -->
-                <div class="lg:col-span-2">
-                    <h4 class="font-bold text-lg mb-6 text-secondary">Contact Us</h4>
-                    <ul class="space-y-6">
-                        <li class="flex items-start gap-4">
-                            <div class="mt-1 bg-white/10 p-2 rounded-lg text-secondary animate-bounce-slow">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C7.82 21 2 15.18 2 5V5z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-400 uppercase font-bold mb-1">Call Us (Parents)</p>
-                                <p class="font-bold text-lg mb-1">075 891 6432</p>
-                                <p class="font-bold text-lg">070 249 3226</p>
-                            </div>
-                        </li>
+                <div>
+                    <h2>Explore</h2>
+                    <ul class="footer-list">
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="index.html#programmes">Programmes</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <!-- Quick Links -->
                 <div>
-                    <h4 class="font-bold text-lg mb-6 text-secondary">Quick Links</h4>
-                    <ul class="space-y-3 text-blue-100">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="gallery.html" class="hover:text-white transition-colors">Gallery</a></li>
-                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                    <h2>Admissions</h2>
+                    <ul class="footer-list">
+                        <li><a href="admissions.html#apply">How to apply</a></li>
+                        <li><a href="admissions.html#fees">Fees</a></li>
+                        <li><a href="admissions.html#requirements">Requirements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Contact</h2>
+                    <ul class="footer-list">
+                        <li><a href="tel:+256758916432">075 891 6432</a> (Headteacher)</li>
+                        <li><a href="tel:+256702493226">070 249 3226</a></li>
+                        <li><a href="https://wa.me/256758916432" target="_blank" rel="noopener">WhatsApp us</a></li>
+                        <li>Kireka Kamuli Road, Kampala</li>
                     </ul>
                 </div>
             </div>
-            <div
-                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-300">
-                <p>&copy; 2025 Kamuli Hill Infant School.</p>
-                <p>Designed with ❤️</p>
+            <div class="footer-bottom">
+                <p>&copy; <span data-year>2026</span> Kamuli Hill Infant School. All rights reserved.</p>
+                <p>Kireka, Kampala, Uganda</p>
             </div>
         </div>
     </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/256758916432" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></svg>
+    </a>
+
     <script src="script.js"></script>
 </body>
 

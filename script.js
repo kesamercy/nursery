@@ -1,110 +1,172 @@
-// Sticky Navbar Logic
-window.addEventListener('scroll', function () {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 10) {
-        navbar.classList.add('glass-nav');
-        navbar.classList.add('shadow-soft');
-    } else {
-        navbar.classList.remove('glass-nav');
-        navbar.classList.remove('shadow-soft');
+/* Kamuli Hill Infant School — site scripts (no dependencies) */
+(function () {
+    'use strict';
+
+    // School WhatsApp number in international format (used by the contact form)
+    var WHATSAPP_NUMBER = '256758916432';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        initHeader();
+        initMobileMenu();
+        initGallery();
+        initReveal();
+        initContactForm();
+        setYear();
+    });
+
+    /* Add a border/shadow to the sticky header once the page scrolls */
+    function initHeader() {
+        var header = document.querySelector('.site-header');
+        if (!header) return;
+
+        var update = function () {
+            header.classList.toggle('is-scrolled', window.scrollY > 8);
+        };
+        update();
+        window.addEventListener('scroll', update, { passive: true });
     }
-});
 
-// Mobile Menu Logic (Full Screen Overlay)
-document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('mobile-menu-btn');
-    const closeBtn = document.getElementById('close-menu-btn');
-    const menu = document.getElementById('mobile-menu');
+    /* Full-screen mobile menu with proper aria state, Escape key and focus return */
+    function initMobileMenu() {
+        var openBtn = document.querySelector('[data-menu-open]');
+        var closeBtn = document.querySelector('[data-menu-close]');
+        var menu = document.getElementById('mobile-menu');
+        if (!openBtn || !menu) return;
 
-    function toggleMenu() {
-        if (!menu) return;
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('flex'); // Switch to flex when visible
-        document.body.classList.toggle('overflow-hidden'); // Lock scroll
-    }
+        function open() {
+            menu.classList.add('is-open');
+            menu.removeAttribute('inert');
+            menu.setAttribute('aria-hidden', 'false');
+            openBtn.setAttribute('aria-expanded', 'true');
+            document.body.classList.add('menu-open');
+            if (closeBtn) closeBtn.focus();
+        }
 
-    if (btn) btn.addEventListener('click', toggleMenu);
-    if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+        function close() {
+            menu.classList.remove('is-open');
+            menu.setAttribute('inert', '');
+            menu.setAttribute('aria-hidden', 'true');
+            openBtn.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
+            openBtn.focus();
+        }
 
-    // Close menu when a link is clicked
-    if (menu) {
-        const links = menu.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', toggleMenu);
+        openBtn.addEventListener('click', open);
+        if (closeBtn) closeBtn.addEventListener('click', close);
+
+        menu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                menu.classList.remove('is-open');
+                document.body.classList.remove('menu-open');
+                openBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && menu.classList.contains('is-open')) close();
+        });
+
+        // Close automatically if the window grows to desktop width
+        window.matchMedia('(min-width: 1000px)').addEventListener('change', function (e) {
+            if (e.matches && menu.classList.contains('is-open')) close();
         });
     }
 
-    // Gallery Tabs Logic
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    /* Gallery filters + lightbox */
+    function initGallery() {
+        var buttons = document.querySelectorAll('.filter-btn');
+        var items = document.querySelectorAll('.gallery-item');
 
-    // Define classes for states
-    const activeClasses = ['bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30', 'scale-105', 'border-transparent', 'hover:bg-primary'];
-    const inactiveClasses = ['bg-white', 'text-dark', 'border-2', 'border-gray-200', 'hover:border-primary', 'hover:text-primary'];
+        buttons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                var filter = button.getAttribute('data-filter');
 
-    if (filterButtons.length > 0) {
-        console.log('Gallery: Found', filterButtons.length, 'filter buttons.');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                console.log('Gallery: Filter clicked:', button.innerText);
-
-                // 1. Reset ALL buttons to Inactive
-                filterButtons.forEach(btn => {
-                    // Remove Active Classes
-                    activeClasses.forEach(cls => btn.classList.remove(cls));
-
-                    // Add Inactive Classes
-                    inactiveClasses.forEach(cls => btn.classList.add(cls));
+                buttons.forEach(function (b) {
+                    b.setAttribute('aria-pressed', b === button ? 'true' : 'false');
                 });
 
-                // 2. Set CLICKED button to Active
-                // Remove Inactive Classes
-                inactiveClasses.forEach(cls => button.classList.remove(cls));
-
-                // Add Active Classes
-                activeClasses.forEach(cls => button.classList.add(cls));
-
-                const filter = button.getAttribute('data-filter');
-                console.log('Gallery: Filtering by', filter);
-
-                // 3. Filter Items
-                galleryItems.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    item.style.animation = 'none'; // Reset animation
-                    item.offsetHeight; // Trigger reflow
-
-                    if (filter === 'all' || category === filter) {
-                        item.classList.remove('hidden');
-                        item.style.animation = null;
-                        item.classList.add('animate-fade-in-up');
-                    } else {
-                        item.classList.add('hidden');
-                        item.classList.remove('animate-fade-in-up');
-                    }
+                items.forEach(function (item) {
+                    var match = filter === 'all' || item.getAttribute('data-category') === filter;
+                    item.hidden = !match;
                 });
             });
         });
-    } else {
-        console.log('Gallery: No filter buttons found.');
+
+        var dialog = document.getElementById('lightbox');
+        if (!dialog || typeof dialog.showModal !== 'function') return;
+
+        var img = dialog.querySelector('img');
+        var caption = dialog.querySelector('[data-lightbox-caption]');
+
+        document.querySelectorAll('[data-lightbox]').forEach(function (trigger) {
+            trigger.addEventListener('click', function () {
+                var thumb = trigger.querySelector('img');
+                img.src = thumb.currentSrc || thumb.src;
+                img.alt = thumb.alt;
+                caption.textContent = trigger.getAttribute('data-caption') || thumb.alt;
+                dialog.showModal();
+            });
+        });
+
+        dialog.querySelector('[data-lightbox-close]').addEventListener('click', function () {
+            dialog.close();
+        });
+
+        // Click on the backdrop closes the dialog
+        dialog.addEventListener('click', function (e) {
+            if (e.target === dialog) dialog.close();
+        });
     }
-});
 
-// Animation on Scroll
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-            observer.unobserve(entry.target);
+    /* Gentle fade-in for sections as they enter the viewport */
+    function initReveal() {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) {
+            els.forEach(function (el) { el.classList.add('is-visible'); });
+            return;
         }
-    });
-}, observerOptions);
 
-console.log('Kamuli Hill Scripts Loaded');
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        els.forEach(function (el) { observer.observe(el); });
+    }
+
+    /* The site has no server-side mail handler, so the enquiry form
+       opens WhatsApp with the parent's details pre-filled. */
+    function initContactForm() {
+        var form = document.getElementById('enquiry-form');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!form.reportValidity()) return;
+
+            var data = new FormData(form);
+            var lines = [
+                'Hello Kamuli Hill Infant School,',
+                '',
+                'Parent name: ' + data.get('parent_name'),
+                'Phone: ' + data.get('phone'),
+                'Class of interest: ' + data.get('child_class')
+            ];
+            var message = (data.get('message') || '').toString().trim();
+            if (message) lines.push('', message);
+
+            var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+            window.open(url, '_blank', 'noopener');
+        });
+    }
+
+    function setYear() {
+        document.querySelectorAll('[data-year]').forEach(function (el) {
+            el.textContent = new Date().getFullYear();
+        });
+    }
+})();

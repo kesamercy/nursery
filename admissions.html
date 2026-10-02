@@ -4,374 +4,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admissions - Kamuli Hill Infant School</title>
+    <title>Admissions &amp; fees | Kamuli Hill Infant School, Kireka</title>
+    <meta name="description" content="How to enrol at Kamuli Hill Infant School: simple steps, termly fees for Day Care, Nursery and P.1 to P.2, and admission requirements.">
+    <meta name="theme-color" content="#13234f">
+    <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        cream: '#fcfbf7', // Warm Cream Background
-                        dark: '#3e2b26', // Warm Dark Brown Text
-                        primary: '#ff6b35', // Playful Orange
-                        secondary: '#facc15', // Bright Yellow
-                        accent: '#2ecc71', // Fresh Green
-                        info: '#3498db', // Sky Blue
-                        kamuli: '#1e3a8a', // School Brand Blue (Royal)
-                        'soft-orange': '#ffe5d9',
-                        'soft-green': '#d5f5e3',
-                        'soft-blue': '#d6eaf8',
-                        'soft-yellow': '#fcf3cf',
-                    },
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
-                        'glow': '0 0 20px rgba(255, 107, 53, 0.3)',
-                        'card': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'bounce-slow': 'bounce 3s infinite',
-                        'spin-slow': 'spin 12s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-nav {
-            background: rgba(252, 251, 247, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 2px solid rgba(255, 107, 53, 0.1);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-cream text-dark font-sans antialiased overflow-x-hidden">
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navbar -->
-    <nav id="navbar"
-        class="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-12 flex justify-between items-center transition-all duration-300">
-        <div class="flex items-center gap-2 group cursor-pointer">
-            <a href="index.html" class="flex items-center gap-2">
-                <div
-                    class="w-12 h-12 bg-kamuli text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl shadow-lg transform group-hover:rotate-12 transition-transform border-4 border-secondary">
-                    K</div>
-                <div class="flex flex-col">
-                    <span
-                        class="text-xl md:text-2xl font-bold font-serif tracking-tight text-kamuli leading-none">Kamuli
-                        Hill</span>
-                    <span class="text-sm font-bold text-primary tracking-widest uppercase">Infant School</span>
-                </div>
-            </a>
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar__info">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <a href="tel:+256758916432">075 891 6432</a>
+                </span>
+                <span class="topbar__address">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Kireka Kamuli Road, Kampala
+                </span>
+            </div>
+            <span class="topbar__note">Admissions open: Day Care to P.2</span>
         </div>
-
-        <div class="hidden md:flex gap-8 text-sm font-bold text-gray-600">
-            <a href="index.html" class="hover:text-primary hover:-translate-y-0.5 transition-all duration-300">Home</a>
-            <a href="about.html" class="hover:text-accent hover:-translate-y-0.5 transition-all duration-300">About</a>
-            <a href="index.html#programs"
-                class="hover:text-info hover:-translate-y-0.5 transition-all duration-300">Programs</a>
-            <a href="gallery.html"
-                class="hover:text-info hover:-translate-y-0.5 transition-all duration-300">Gallery</a>
-            <a href="admissions.html" class="text-secondary underline underline-offset-4 decoration-2">Admissions</a>
-            <a href="contact.html"
-                class="hover:text-kamuli hover:-translate-y-0.5 transition-all duration-300">Contact</a>
-        </div>
-
-        <a href="admissions.html"
-            class="hidden md:block bg-secondary text-dark border-b-4 border-yellow-600 active:border-b-0 active:translate-y-1 px-8 py-3 rounded-full text-sm font-bold hover:bg-yellow-400 transition-all shadow-lg transform hover:-rotate-1">
-            Enrol Now 🎓
-        </a>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn"
-            class="md:hidden relative z-50 p-2 text-primary hover:bg-primary/10 rounded-full transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-    </nav>
-
-    <!-- Full Screen Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="hidden fixed inset-0 bg-[#fcfbf7]/98 backdrop-blur-xl z-[60] flex-col items-center justify-center space-y-8 transition-all duration-300">
-        <!-- Close Button -->
-        <button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-dark hover:text-primary transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-
-        <!-- Menu Links -->
-        <a href="index.html"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Home</a>
-        <a href="about.html" class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">About
-            Us</a>
-        <a href="index.html#programs"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Programs</a>
-        <a href="gallery.html"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Gallery</a>
-        <a href="admissions.html"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Admissions</a>
-        <a href="contact.html"
-            class="text-3xl font-serif font-bold text-dark hover:text-primary transition-colors">Contact</a>
-
-        <a href="admissions.html"
-            class="mt-8 bg-secondary text-dark border-b-4 border-yellow-600 active:border-b-0 active:translate-y-1 px-10 py-4 rounded-full text-xl font-bold hover:bg-yellow-400 transition-all shadow-xl transform hover:-rotate-1">
-            Enrol Now 🎓
-        </a>
-
-        <!-- Decorative Shapes -->
-        <div class="absolute bottom-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-bounce-slow"></div>
-        <div class="absolute top-10 left-10 w-16 h-16 bg-accent/10 rounded-full blur-xl animate-spin-slow"></div>
     </div>
 
     <!-- Header -->
-    <header class="pt-32 pb-12 px-4 md:px-12 bg-[#fffbeb] relative overflow-hidden">
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <span
-                class="inline-block bg-white text-secondary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 border border-secondary/10">Admissions
-                Open</span>
-            <h1 class="text-5xl md:text-6xl font-serif font-black text-dark mb-6">Join Our <span
-                    class="text-kamuli relative inline-block">Family
-                    <svg class="absolute -bottom-2 left-0 w-full text-secondary" viewBox="0 0 100 10"
-                        preserveAspectRatio="none">
-                        <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
-                    </svg>
-                </span></h1>
-            <p class="text-xl text-gray-500 max-w-2xl mx-auto">We are accepting applications for Baby Class, Middle
-                Class, Top Class, P.1, and P.2.</p>
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="index.html" aria-label="Kamuli Hill Infant School, home">
+                <span class="brand__crest" aria-hidden="true">K</span>
+                <span class="brand__text">
+                    <span class="brand__name">Kamuli Hill</span>
+                    <span class="brand__tag">Infant School</span>
+                </span>
+            </a>
+
+            <nav class="nav" aria-label="Main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#programmes">Programmes</a></li>
+                    <li><a href="admissions.html" aria-current="page">Admissions</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn btn--gold header-cta" href="admissions.html">Enrol now</a>
+
+            <button class="menu-toggle" type="button" data-menu-open aria-controls="mobile-menu" aria-expanded="false">
+                <span class="visually-hidden">Open menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 md:px-12 py-20 space-y-24">
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
+        <div class="mobile-menu__top">
+            <a class="brand" href="index.html">
+                <span class="brand__crest" aria-hidden="true">K</span>
+                <span class="brand__text">
+                    <span class="brand__name">Kamuli Hill</span>
+                    <span class="brand__tag">Infant School</span>
+                </span>
+            </a>
+            <button class="menu-toggle" type="button" data-menu-close>
+                <span class="visually-hidden">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+        </div>
+        <nav aria-label="Mobile">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="index.html#programmes">Programmes</a></li>
+                <li><a href="admissions.html" aria-current="page">Admissions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu__actions">
+            <a class="btn btn--gold btn--block" href="admissions.html">Enrol now</a>
+            <a class="btn btn--ghost btn--block" href="tel:+256758916432">Call 075 891 6432</a>
+        </div>
+    </div>
 
-        <!-- Fees Structure -->
-        <section>
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-serif font-black text-dark">Tuition & <span
-                        class="text-accent">Fees</span></h2>
-                <p class="text-gray-500">Affordable quality education for every child.</p>
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <ol class="breadcrumb" aria-label="Breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">Admissions</li>
+                </ol>
+                <h1>Join our family</h1>
+                <p class="lead">We are accepting applications for Day Care, Baby Class, Middle Class, Top Class, P.1 and P.2.</p>
             </div>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Nursery -->
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-card border-t-8 border-primary hover:-translate-y-2 transition-transform duration-300 group relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 bg-primary/10 w-32 h-32 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110">
-                    </div>
-                    <h3 class="text-2xl font-serif font-bold text-dark mb-2 relative z-10">Nursery Section</h3>
-                    <p class="text-sm font-bold text-primary uppercase tracking-wider mb-6 relative z-10">Baby, Middle &
-                        Top</p>
+        <!-- How to apply -->
+        <section class="section" id="apply">
+            <div class="container">
+                <div class="section-head section-head--center reveal">
+                    <p class="eyebrow">How to apply</p>
+                    <h2>Four simple steps</h2>
+                </div>
+                <ol class="grid steps">
+                    <li class="card step reveal">
+                        <h3>Call or visit</h3>
+                        <p>Call 075 891 6432 or drop by the school on Kireka Kamuli Road to see our classrooms.</p>
+                    </li>
+                    <li class="card step reveal">
+                        <h3>Bring the requirements</h3>
+                        <p>A photocopy of your child's birth certificate and two recent passport photos.</p>
+                    </li>
+                    <li class="card step reveal">
+                        <h3>Pay the admission fee</h3>
+                        <p>The admission fee is 50,000 UGX, paid when you register your child.</p>
+                    </li>
+                    <li class="card step reveal">
+                        <h3>Start school</h3>
+                        <p>We'll welcome your child into their new class and help them settle in.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
 
-                    <div class="flex items-baseline gap-1 mb-6 relative z-10">
-                        <span class="text-4xl font-black text-dark">50,000</span>
-                        <span class="text-gray-400 font-bold">UGX / Term</span>
-                    </div>
-
-                    <ul class="space-y-4 mb-8 text-gray-600 relative z-10">
-                        <li class="flex items-center gap-3">
-                            <span class="text-primary font-bold">✓</span> Full Day Care
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-primary font-bold">✓</span> Porridge Provided
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-primary font-bold">✓</span> Scholastic Materials
-                        </li>
-                    </ul>
-                    <a href="#contact"
-                        class="block w-full py-3 rounded-xl bg-primary/10 text-primary font-bold text-center group-hover:bg-primary group-hover:text-white transition-colors">Inquire
-                        Now</a>
+        <!-- Fees -->
+        <section class="section section--cream" id="fees">
+            <div class="container">
+                <div class="section-head section-head--center reveal">
+                    <p class="eyebrow">Tuition &amp; fees</p>
+                    <h2>Quality education at fair fees</h2>
+                    <p class="lead">Clear termly fees, with meals and learning materials included.</p>
                 </div>
 
-                <!-- Primary -->
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-card border-t-8 border-kamuli hover:-translate-y-2 transition-transform duration-300 group relative overflow-hidden transform md:-mt-4">
-                    <div
-                        class="absolute top-0 right-0 bg-kamuli/10 w-32 h-32 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110">
-                    </div>
-                    <span
-                        class="absolute top-4 right-4 bg-secondary text-dark text-xs font-bold px-2 py-1 rounded-lg z-20">POPULAR</span>
+                <div class="grid fees">
+                    <article class="card fee-card reveal">
+                        <h3>Day Care</h3>
+                        <p class="fee-card__classes">Toddlers</p>
+                        <div class="fee-card__price">
+                            <span class="fee-card__amount">Daily</span>
+                            <span class="fee-card__unit">rates, call to ask</span>
+                        </div>
+                        <ul class="checklist">
+                            <li>Safe environment</li>
+                            <li>Play &amp; sleep area</li>
+                            <li>Professional nannies</li>
+                        </ul>
+                        <a class="btn btn--ghost btn--block" href="contact.html">Ask about Day Care</a>
+                    </article>
 
-                    <h3 class="text-2xl font-serif font-bold text-dark mb-2 relative z-10">Primary Section</h3>
-                    <p class="text-sm font-bold text-kamuli uppercase tracking-wider mb-6 relative z-10">P.1 & P.2</p>
+                    <article class="card fee-card reveal">
+                        <h3>Nursery Section</h3>
+                        <p class="fee-card__classes">Baby, Middle &amp; Top Class</p>
+                        <div class="fee-card__price">
+                            <span class="fee-card__amount">50,000</span>
+                            <span class="fee-card__unit">UGX per term</span>
+                        </div>
+                        <ul class="checklist">
+                            <li>Full day care</li>
+                            <li>Porridge provided</li>
+                            <li>Scholastic materials</li>
+                        </ul>
+                        <a class="btn btn--ghost btn--block" href="contact.html">Enquire now</a>
+                    </article>
 
-                    <div class="flex items-baseline gap-1 mb-6 relative z-10">
-                        <span class="text-4xl font-black text-dark">65,000</span>
-                        <span class="text-gray-400 font-bold">UGX / Term</span>
-                    </div>
-
-                    <ul class="space-y-4 mb-8 text-gray-600 relative z-10">
-                        <li class="flex items-center gap-3">
-                            <span class="text-kamuli font-bold">✓</span> Textbooks Included
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-kamuli font-bold">✓</span> Computer Lessons
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-kamuli font-bold">✓</span> Co-curricular Activities
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-kamuli font-bold">✓</span> Lunch Program
-                        </li>
-                    </ul>
-                    <a href="#contact"
-                        class="block w-full py-3 rounded-xl bg-kamuli text-white font-bold text-center shadow-lg hover:shadow-xl transition-shadow">Enroll
-                        Today</a>
+                    <article class="card fee-card fee-card--featured reveal">
+                        <span class="fee-card__flag">Popular</span>
+                        <h3>Primary Section</h3>
+                        <p class="fee-card__classes">P.1 &amp; P.2</p>
+                        <div class="fee-card__price">
+                            <span class="fee-card__amount">65,000</span>
+                            <span class="fee-card__unit">UGX per term</span>
+                        </div>
+                        <ul class="checklist">
+                            <li>Textbooks included</li>
+                            <li>Computer lessons</li>
+                            <li>Co-curricular activities</li>
+                            <li>Lunch programme</li>
+                        </ul>
+                        <a class="btn btn--block" href="contact.html">Enrol today</a>
+                    </article>
                 </div>
-
-                <!-- Day Care -->
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-card border-t-8 border-accent hover:-translate-y-2 transition-transform duration-300 group relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 bg-accent/10 w-32 h-32 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110">
-                    </div>
-                    <h3 class="text-2xl font-serif font-bold text-dark mb-2 relative z-10">Day Care</h3>
-                    <p class="text-sm font-bold text-accent uppercase tracking-wider mb-6 relative z-10">Toddlers</p>
-
-                    <div class="flex items-baseline gap-1 mb-6 relative z-10">
-                        <span class="text-4xl font-black text-dark">Daily</span>
-                        <span class="text-gray-400 font-bold">Rates</span>
-                    </div>
-
-                    <ul class="space-y-4 mb-8 text-gray-600 relative z-10">
-                        <li class="flex items-center gap-3">
-                            <span class="text-accent font-bold">✓</span> Safe Environment
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-accent font-bold">✓</span> Play & Sleep Area
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-accent font-bold">✓</span> Professional Nannies
-                        </li>
-                    </ul>
-                    <a href="#contact"
-                        class="block w-full py-3 rounded-xl bg-accent/10 text-accent font-bold text-center group-hover:bg-accent group-hover:text-white transition-colors">Contact
-                        Us</a>
-                </div>
+                <p class="note" style="text-align: center; margin-inline: auto;">An admission fee of 50,000 UGX applies when registering. For questions about fees, call <a href="tel:+256758916432">075 891 6432</a>.</p>
             </div>
         </section>
 
         <!-- Requirements -->
-        <section
-            class="bg-white rounded-[3rem] p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-12 items-center">
-            <div class="flex-1 space-y-6">
-                <h2 class="text-3xl font-serif font-bold text-dark">Requirements</h2>
-                <p class="text-gray-600">To complete the admission process, please ensure you have the following:</p>
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                        <div
-                            class="w-10 h-10 rounded-full bg-kamuli/10 flex items-center justify-center text-kamuli font-bold">
-                            1</div>
-                        <span class="font-medium text-dark">Photocopy of Birth Certificate</span>
-                    </div>
-                    <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                        <div
-                            class="w-10 h-10 rounded-full bg-kamuli/10 flex items-center justify-center text-kamuli font-bold">
-                            2</div>
-                        <span class="font-medium text-dark">2 Recent Passport Photos</span>
-                    </div>
-                    <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                        <div
-                            class="w-10 h-10 rounded-full bg-kamuli/10 flex items-center justify-center text-kamuli font-bold">
-                            3</div>
-                        <span class="font-medium text-dark">Admission Fee (50,000 UGX)</span>
-                    </div>
+        <section class="section" id="requirements">
+            <div class="container split">
+                <div class="reveal">
+                    <p class="eyebrow">Requirements</p>
+                    <h2>What to bring</h2>
+                    <p class="lead" style="margin: 1rem 0 1.75rem;">To complete the admission process, please bring the following:</p>
+                    <ol class="req-list">
+                        <li>Photocopy of birth certificate</li>
+                        <li>2 recent passport photos</li>
+                        <li>Admission fee (50,000 UGX)</li>
+                    </ol>
                 </div>
-            </div>
-            <div class="flex-1 relative">
-                <!-- Premium Flat SVG: Backpack (Reuse) -->
-                <div class="relative bg-white rounded-3xl p-8 shadow-xl border-4 border-kamuli/10 transform rotate-2">
-                    <svg width="250" height="250" viewBox="0 0 200 200" fill="none" class="mx-auto">
-                        <path
-                            d="M50 60H150C161.046 60 170 68.9543 170 80V170C170 181.046 161.046 190 150 190H50C38.9543 190 30 181.046 30 170V80C30 68.9543 38.9543 60 50 60Z"
-                            fill="#3B82F6" />
-                        <path d="M100 60V190" stroke="#2563EB" stroke-width="2" />
-                        <path d="M50 60C50 60 40 20 100 20C160 20 150 60 150 60" stroke="#2563EB" stroke-width="10"
-                            stroke-linecap="round" />
-                        <rect x="50" y="100" width="100" height="60" rx="10" fill="#60A5FA" />
-                        <rect x="120" y="40" width="10" height="40" fill="#FACC15" transform="rotate(15 120 40)" />
-                        <rect x="140" y="45" width="10" height="40" fill="#EF4444" transform="rotate(-15 140 45)" />
-                    </svg>
+                <div class="photo-frame photo-frame--landscape photo-frame--coral reveal">
+                    <img class="photo-frame__img" src="assets/images/outdoor-play-mat.jpg" width="1200" height="900" alt="Children playing with balls and toys on mats spread across the school lawn" loading="lazy">
                 </div>
             </div>
         </section>
 
+        <!-- CTA -->
+        <section aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-band reveal">
+                    <div class="cta-band__inner">
+                        <div>
+                            <h2 id="cta-title">Ready to enrol?</h2>
+                            <p>Call the headteacher or send us a message on WhatsApp. We're happy to answer any questions.</p>
+                        </div>
+                        <div class="btn-row">
+                            <a class="btn btn--gold" href="tel:+256758916432">Call 075 891 6432</a>
+                            <a class="btn btn--light" href="https://wa.me/256758916432" target="_blank" rel="noopener">WhatsApp us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer (Same as Index) -->
-    <footer id="contact" class="bg-kamuli text-white pt-24 pb-12 rounded-t-[3rem] mt-12 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- Brand -->
-                <div class="space-y-6">
-                    <span class="text-3xl font-bold font-serif">Kamuli Hill<span class="text-secondary">.</span></span>
-                    <p class="text-blue-100 text-sm leading-relaxed">
-                        Nurturing the development of a child with care, quality education, and love! ❤️
-                    </p>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a class="brand" href="index.html">
+                        <span class="brand__crest" aria-hidden="true">K</span>
+                        <span class="brand__text">
+                            <span class="brand__name">Kamuli Hill</span>
+                            <span class="brand__tag">Infant School</span>
+                        </span>
+                    </a>
+                    <p class="footer-about">Nurturing the development of every child with care, quality education and love.</p>
                 </div>
-
-                <!-- Contact Info -->
-                <div class="lg:col-span-2">
-                    <h4 class="font-bold text-lg mb-6 text-secondary">Contact Us</h4>
-                    <ul class="space-y-6">
-                        <li class="flex items-start gap-4">
-                            <div class="mt-1 bg-white/10 p-2 rounded-lg text-secondary animate-bounce-slow">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C7.82 21 2 15.18 2 5V5z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-400 uppercase font-bold mb-1">Call Us (Parents)</p>
-                                <p class="font-bold text-lg mb-1">075 891 6432</p>
-                                <p class="font-bold text-lg">070 249 3226</p>
-                            </div>
-                        </li>
+                <div>
+                    <h2>Explore</h2>
+                    <ul class="footer-list">
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="index.html#programmes">Programmes</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <!-- Quick Links -->
                 <div>
-                    <h4 class="font-bold text-lg mb-6 text-secondary">Quick Links</h4>
-                    <ul class="space-y-3 text-blue-100">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="gallery.html" class="hover:text-white transition-colors">Gallery</a></li>
-                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                    <h2>Admissions</h2>
+                    <ul class="footer-list">
+                        <li><a href="admissions.html#apply">How to apply</a></li>
+                        <li><a href="admissions.html#fees">Fees</a></li>
+                        <li><a href="admissions.html#requirements">Requirements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Contact</h2>
+                    <ul class="footer-list">
+                        <li><a href="tel:+256758916432">075 891 6432</a> (Headteacher)</li>
+                        <li><a href="tel:+256702493226">070 249 3226</a></li>
+                        <li><a href="https://wa.me/256758916432" target="_blank" rel="noopener">WhatsApp us</a></li>
+                        <li>Kireka Kamuli Road, Kampala</li>
                     </ul>
                 </div>
             </div>
-            <div
-                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-300">
-                <p>&copy; 2025 Kamuli Hill Infant School.</p>
-                <p>Designed with ❤️</p>
+            <div class="footer-bottom">
+                <p>&copy; <span data-year>2026</span> Kamuli Hill Infant School. All rights reserved.</p>
+                <p>Kireka, Kampala, Uganda</p>
             </div>
         </div>
     </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/256758916432" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></svg>
+    </a>
+
     <script src="script.js"></script>
 </body>
 
