@@ -97,16 +97,56 @@
 
         var img = dialog.querySelector('img');
         var caption = dialog.querySelector('[data-lightbox-caption]');
+        var count = dialog.querySelector('[data-lightbox-count]');
+        var prevBtn = dialog.querySelector('[data-lightbox-prev]');
+        var nextBtn = dialog.querySelector('[data-lightbox-next]');
+        var triggers = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
+        var current = 0;
+        var lastTrigger = null;
 
-        document.querySelectorAll('[data-lightbox]').forEach(function (trigger) {
+        // Show photo number `index` (wraps around at either end)
+        function show(index) {
+            current = (index + triggers.length) % triggers.length;
+            var trigger = triggers[current];
+            var thumb = trigger.querySelector('img');
+            img.src = thumb.currentSrc || thumb.src;
+            img.alt = thumb.alt;
+            caption.textContent = trigger.getAttribute('data-caption') || thumb.alt;
+            if (count) count.textContent = (current + 1) + ' / ' + triggers.length;
+        }
+
+        triggers.forEach(function (trigger, index) {
             trigger.addEventListener('click', function () {
-                var thumb = trigger.querySelector('img');
-                img.src = thumb.currentSrc || thumb.src;
-                img.alt = thumb.alt;
-                caption.textContent = trigger.getAttribute('data-caption') || thumb.alt;
+                lastTrigger = trigger;
+                show(index);
                 dialog.showModal();
             });
         });
+
+        if (prevBtn) prevBtn.addEventListener('click', function () { show(current - 1); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1); });
+
+        // Hide the arrows when there is only one photo on the page
+        if (triggers.length < 2) {
+            [prevBtn, nextBtn].forEach(function (b) { if (b) b.hidden = true; });
+        }
+
+        dialog.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); }
+        });
+
+        // Swipe left/right on phones
+        var touchX = null;
+        dialog.addEventListener('touchstart', function (e) {
+            touchX = e.changedTouches[0].clientX;
+        }, { passive: true });
+        dialog.addEventListener('touchend', function (e) {
+            if (touchX === null) return;
+            var dx = e.changedTouches[0].clientX - touchX;
+            if (Math.abs(dx) > 50) show(dx < 0 ? current + 1 : current - 1);
+            touchX = null;
+        }, { passive: true });
 
         dialog.querySelector('[data-lightbox-close]').addEventListener('click', function () {
             dialog.close();
@@ -115,6 +155,11 @@
         // Click on the backdrop closes the dialog
         dialog.addEventListener('click', function (e) {
             if (e.target === dialog) dialog.close();
+        });
+
+        // Return focus to the photo that was opened
+        dialog.addEventListener('close', function () {
+            if (lastTrigger) lastTrigger.focus();
         });
     }
 
